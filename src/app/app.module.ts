@@ -20,6 +20,11 @@ const appRoutes: Routes = [
 	{
 		path: 'product/:id',
 		component: ProductPageComponent
+	},
+	{
+		path: '',
+		redirectTo: 'products',
+		pathMatch: 'full'
 	}
 
 ];
@@ -36,7 +41,7 @@ imports: [
 	BrowserModule,
 	FormsModule,
 	HttpModule,
-	RouterModule,
+	RouterModule.forRoot(appRoutes),
 ],
 providers: [
 	ProductService,
